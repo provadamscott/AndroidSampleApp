@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AppleFritter</string>
+    <string name="title_home">Home</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_mic">Mic</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_tier">Tier</string>
+    <string name="conf_id_text">ConfId</string>
+    <string name="state_text">State</string>
+    <string name="connected_text">Connected</string>
+    <string name="reconnecting_text">Reconnecting</string>
+    <string name="disconnected_text">Disconnected</string>
+
+    <string-array name="tier_array">
+        <item>Dev</item>
+        <item>Test</item>
+        <item>Stage</item>
+        <item>Prod</item>
+    </string-array>
+</resources>

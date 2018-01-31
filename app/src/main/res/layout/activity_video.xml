@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.providence.webrtcandroid.sampleapp.VideoActivity">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <FrameLayout
+            android:id="@+id/ingress_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/egress_layout"
+            android:layout_width="150sp"
+            android:layout_height="200sp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="70sp"
+            android:layout_marginEnd="1sp"
+            android:background="@drawable/default_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="0dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="0dp">
+                <TextView
+                    android:id="@+id/tierLabel"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginLeft="1sp"
+                    android:layout_marginRight="1sp"
+                    android:background="@drawable/default_background"
+                    android:padding="11dp"
+                    android:text="@string/title_tier"
+                    android:textColor="@color/offWhite"
+                    android:textSize="15sp" />
+                <RelativeLayout
+                    android:id="@+id/tierSpinner"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_marginLeft="1sp"
+                    android:layout_marginRight="1sp"
+                    android:background="@drawable/default_background"
+                    android:padding="11dp">
+                    <Spinner
+                        android:id="@+id/tier_spinner"
+                        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="20.5sp"
+                        android:backgroundTint="@color/offWhite"
+                        android:entries="@array/tier_array"
+                        android:foregroundTint="@color/offWhite"
+                        android:padding="0dp"
+                        android:prompt="@string/conf_id_text" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="0sp"
+                    android:layout_height="0sp"
+                    android:layout_weight="7"
+                    android:padding="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp">
+                <TextView
+                    android:id="@+id/confLabel"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_marginLeft="1sp"
+                    android:layout_marginRight="1sp"
+                    android:background="@drawable/default_background"
+                    android:padding="11dp"
+                    android:text="@string/conf_id_text"
+                    android:textColor="@color/offWhite"
+                    android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/conf_edit_text"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_marginLeft="1sp"
+                    android:layout_marginRight="1sp"
+                    android:background="@drawable/default_background"
+                    android:inputType="text"
+                    android:padding="11dp"
+                    android:textColor="@color/offWhite"
+                    android:textSize="15sp" />
+                <View
+                    android:layout_width="0sp"
+                    android:layout_height="0sp"
+                    android:layout_weight="7"
+                    android:padding="0dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:layout_marginBottom="70sp"
+            android:layout_marginEnd="1sp">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginLeft="1sp"
+                android:layout_marginRight="1sp"
+                android:background="@drawable/default_background"
+                android:padding="11dp"
+                android:text="@string/state_text"
+                android:textColor="@color/offWhite"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/state_text_view"
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginLeft="1sp"
+                android:layout_marginRight="1sp"
+                android:background="@drawable/default_background"
+                android:padding="11dp"
+                android:text="@string/disconnected_text"
+                android:textColor="@color/offWhite"
+                android:textSize="15sp" />
+            <View
+                android:layout_width="0sp"
+                android:layout_height="0sp"
+                android:layout_weight="7"
+                android:padding="0dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <ImageButton
+                android:id="@+id/camera_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1sp"
+                android:layout_weight="1"
+                android:background="@drawable/default_background"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/camera" />
+            <ImageButton
+                android:id="@+id/mic_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1sp"
+                android:layout_weight="1"
+                android:background="@drawable/default_background"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/mic" />
+            <ImageButton
+                android:id="@+id/chat_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1sp"
+                android:layout_weight="1"
+                android:background="@drawable/default_background"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/chat" />
+            <ImageButton
+                android:id="@+id/phone_button"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1sp"
+                android:layout_weight="1"
+                android:background="@drawable/default_background"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/phone" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</android.support.constraint.ConstraintLayout>
