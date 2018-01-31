@@ -18,6 +18,7 @@ public class IngressVideo {
         layout.setVisibility(View.INVISIBLE);
         ImageView image = new ImageView(context);
         image.setImageResource(R.drawable.picture);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
         layout.addView(image);
     }
 }

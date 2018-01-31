@@ -16,7 +16,7 @@ public class EgressCamera {
         camera = null;
         try {
             releaseCamera();
-            camera = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT); // attempt to get a Camera instance
+            camera = Camera.open(findFrontFacingCamera()); // attempt to get a Camera instance
             camera.setDisplayOrientation(90);
         }
         catch (Exception e){
@@ -55,5 +55,19 @@ public class EgressCamera {
         ViewGroup.LayoutParams params = layout.getLayoutParams();
         params.height = (int)(params.width / aspectRatio);
         layout.setLayoutParams(params);
+    }
+
+    private int findFrontFacingCamera() {
+        int cameraId = -1;
+        int numberOfCameras = Camera.getNumberOfCameras();
+        for (int i = 0; i < numberOfCameras; i++) {
+            Camera.CameraInfo info = new Camera.CameraInfo();
+            Camera.getCameraInfo(i, info);
+            if (info.facing == Camera.CameraInfo.CAMERA_FACING_FRONT) {
+                cameraId = i;
+                break;
+            }
+        }
+        return cameraId;
     }
 }
